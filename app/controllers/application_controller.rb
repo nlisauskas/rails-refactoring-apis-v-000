@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
     if !logged_in?
       github = GitHubService.new
       github.authenticate!(ENV['GITHUB_CLIENT'], ENV['GITHUB_SECRET'], params[:code])
-    end 
+    end
   end
 
   def logged_in?
