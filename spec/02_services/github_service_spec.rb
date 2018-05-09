@@ -62,7 +62,7 @@ describe 'GithubService' do
 #      expect(@repos_array.first.class).to eq(GithubRepo)
 #      expect(@repos_array.first.name).to eq("Repo 1")
 #    end
-  end
+#  end
 
   describe '#create_repo' do
     it "sends the correct POST request" do
