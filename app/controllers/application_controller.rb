@@ -1,3 +1,4 @@
+
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
@@ -6,14 +7,12 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def authenticate_user
-    if !logged_in?
-      github = GitHubService.new
-      github.authenticate!(ENV['GITHUB_CLIENT'], ENV['GITHUB_SECRET'], params[:code])
+    def authenticate_user
+      redirect_to "https://github.com/login/oauth/authorize?client_id=#{ENV['GITHUB_CLIENT']}&scope=repo" if !logged_in?
     end
-  end
 
-  def logged_in?
-    !!session[:token]
-  end
+
+    def logged_in?
+      !!session[:token]
+    end
 end
