@@ -1,3 +1,4 @@
+
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
@@ -9,6 +10,7 @@ class ApplicationController < ActionController::Base
     def authenticate_user
       redirect_to "https://github.com/login/oauth/authorize?client_id=#{ENV['GITHUB_CLIENT']}&scope=repo" if !logged_in?
     end
+
 
     def logged_in?
       !!session[:token]
