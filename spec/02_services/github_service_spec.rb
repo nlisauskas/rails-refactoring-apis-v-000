@@ -25,10 +25,10 @@ describe 'GithubService' do
   #      :headers => {'Accept'=>'application/json'})
   #  end
 
-    it "sets @access_token for a GithubService" do
-      expect(@service.access_token).to eq('1')
-    end
-  end
+  #  it "sets @access_token for a GithubService" do
+  #    expect(@service.access_token).to eq('1')
+  #  end
+#  end
 
   describe '#get_username' do
     before :each do
